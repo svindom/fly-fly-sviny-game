@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ptqq4imnxe5r"]
+[gd_scene load_steps=17 format=3 uid="uid://ptqq4imnxe5r"]
 
 [ext_resource type="Script" path="res://scenes/SvinyCharacter/sviny.gd" id="1_3jcnp"]
 [ext_resource type="Texture2D" uid="uid://bkw7bxowibkwv" path="res://assets/images/sviny_character/sviny_idle_atlas.png" id="1_4p3c5"]
+[ext_resource type="Texture2D" uid="uid://c417afplemalx" path="res://assets/images/bubble_sprite.png" id="3_5ofg0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l8ml"]
 atlas = ExtResource("1_4p3c5")
@@ -50,7 +51,74 @@ animations = [{
 radius = 224.0
 height = 502.0
 
+[sub_resource type="Animation" id="Animation_kstll"]
+resource_name = "sviny_up_force_animation"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SvinyIdleFlyFrameAnimation:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nuvyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SvinyIdleFlyFrameAnimation:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4on0o"]
+_data = {
+"RESET": SubResource("Animation_nuvyx"),
+"sviny_up_force_animation": SubResource("Animation_kstll")
+}
+
+[sub_resource type="Gradient" id="Gradient_76xqt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_peil2"]
+gradient = SubResource("Gradient_76xqt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jq5je"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-20, 0, 0)
+emission_shape_scale = Vector3(-35, 1, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+velocity_pivot = Vector3(-4, 0, 0)
+direction = Vector3(-10, 0, 0)
+spread = 25.0
+initial_velocity_max = 600.0
+angular_velocity_min = -370.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.3
+color = Color(0.989306, 0.994226, 0.974638, 1)
+color_ramp = SubResource("GradientTexture1D_peil2")
+anim_speed_max = 8.09
+anim_offset_max = 0.3596
+
 [node name="Sviny" type="CharacterBody2D"]
+collision_mask = 8
 script = ExtResource("1_3jcnp")
 
 [node name="SvinyIdleFlyFrameAnimation" type="AnimatedSprite2D" parent="."]
@@ -62,3 +130,19 @@ frame_progress = 0.413057
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(30, 6)
 shape = SubResource("CapsuleShape2D_wnuji")
+
+[node name="UpForceAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4on0o")
+}
+
+[node name="BubbleParticles" type="GPUParticles2D" parent="."]
+position = Vector2(-225, -101)
+amount = 10
+amount_ratio = 0.6
+process_material = SubResource("ParticleProcessMaterial_jq5je")
+texture = ExtResource("3_5ofg0")
+lifetime = 0.7
+preprocess = 20.0
+explosiveness = 0.1
+randomness = 0.2
