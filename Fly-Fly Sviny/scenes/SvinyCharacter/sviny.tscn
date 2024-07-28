@@ -46,8 +46,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lye6"]
-size = Vector2(268, 514)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnuji"]
+radius = 224.0
+height = 502.0
 
 [node name="Sviny" type="CharacterBody2D"]
 script = ExtResource("1_3jcnp")
@@ -56,8 +57,8 @@ script = ExtResource("1_3jcnp")
 sprite_frames = SubResource("SpriteFrames_cle7s")
 animation = &"sviny_fly_idle"
 autoplay = "sviny_fly_idle"
-frame_progress = 0.244407
+frame_progress = 0.413057
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(116, 8)
-shape = SubResource("RectangleShape2D_5lye6")
+position = Vector2(30, 6)
+shape = SubResource("CapsuleShape2D_wnuji")
