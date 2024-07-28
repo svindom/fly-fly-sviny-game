@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b2fcstcaayirc"]
+
+[node name="GamePlayScreen" type="Node2D"]
+
+[node name="TemporaryBG" type="Node" parent="."]
