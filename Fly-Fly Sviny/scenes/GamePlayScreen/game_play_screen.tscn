@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=10 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Texture2D" uid="uid://con7qch0qkcji" path="res://assets/images/background/clouds_1.png" id="2_n3m00"]
@@ -8,39 +8,65 @@
 [ext_resource type="Texture2D" uid="uid://bj6ykfx2bwlcf" path="res://assets/images/background/middleground_hills_6.png" id="6_4boh3"]
 [ext_resource type="Texture2D" uid="uid://cn2lqquahag7r" path="res://assets/images/background/middleground_field_7.png" id="7_aax3g"]
 [ext_resource type="Texture2D" uid="uid://da6pc7sq228ky" path="res://assets/images/background/ground_8.png" id="8_ibmqn"]
+[ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
 
 [node name="GamePlayScreen" type="Node2D"]
+z_index = -1
 
 [node name="TemporaryBG" type="Node" parent="."]
 
 [node name="TemporaryBGSky" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("1_m3myj")
 centered = false
 
 [node name="TemporaryBGClouds" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("2_n3m00")
 centered = false
 
 [node name="TemporaryBG" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("3_opag0")
 centered = false
 
 [node name="TemporaryBG2" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("4_duw45")
 centered = false
 
 [node name="TemporaryBG3" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("5_hmeum")
 centered = false
 
 [node name="TemporaryBG4" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+position = Vector2(-1766, 0)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("6_4boh3")
 centered = false
 
 [node name="TemporaryBG5" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("7_aax3g")
 centered = false
 
 [node name="TemporaryBG6" type="Sprite2D" parent="TemporaryBG"]
+z_index = -1
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("8_ibmqn")
 centered = false
+
+[node name="Sviny" parent="." instance=ExtResource("9_bl3xb")]
+z_index = 1
+position = Vector2(251, 332)
+scale = Vector2(0.13, 0.13)
+gravity = 240.0
+up_player_forse = -180.0

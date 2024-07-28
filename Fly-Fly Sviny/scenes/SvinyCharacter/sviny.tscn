@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://ptqq4imnxe5r"]
+
+[ext_resource type="Script" path="res://scenes/SvinyCharacter/sviny.gd" id="1_3jcnp"]
+[ext_resource type="Texture2D" uid="uid://bkw7bxowibkwv" path="res://assets/images/sviny_character/sviny_idle_atlas.png" id="1_4p3c5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l8ml"]
+atlas = ExtResource("1_4p3c5")
+region = Rect2(0, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xi34"]
+atlas = ExtResource("1_4p3c5")
+region = Rect2(550, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_305cv"]
+atlas = ExtResource("1_4p3c5")
+region = Rect2(1100, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mykb0"]
+atlas = ExtResource("1_4p3c5")
+region = Rect2(1650, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb51k"]
+atlas = ExtResource("1_4p3c5")
+region = Rect2(2200, 0, 550, 550)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cle7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l8ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xi34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_305cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mykb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb51k")
+}],
+"loop": true,
+"name": &"sviny_fly_idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lye6"]
+size = Vector2(268, 514)
+
+[node name="Sviny" type="CharacterBody2D"]
+script = ExtResource("1_3jcnp")
+
+[node name="SvinyIdleFlyFrameAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cle7s")
+animation = &"sviny_fly_idle"
+autoplay = "sviny_fly_idle"
+frame_progress = 0.244407
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(116, 8)
+shape = SubResource("RectangleShape2D_5lye6")
