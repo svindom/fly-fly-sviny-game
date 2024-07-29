@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://blyfp5ehw8bnk"]
+
+[ext_resource type="Texture2D" uid="uid://cecu6h1vvaetq" path="res://assets/images/obstacles/obstacle_upper_rock.png" id="1_gvjip"]
+
+[node name="RockObstacleTop" type="Area2D"]
+z_index = 1
+
+[node name="RockUpperSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_gvjip")
+centered = false
+offset = Vector2(-392, -1091)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-72.7, 0)
+polygon = PackedVector2Array(73, -1, 54, -5, -13, -67, -51, -106, -62, -138, -48, -256, -132, -337, -155, -327, -217, -382, -209, -440, -311, -474, -319, -539, -316, -580, -240, -618, -234, -645, -239, -714, -253, -770, -262, -781, -266, -809, -236, -866, -192, -897, -258, -1063, -258, -1072, -244, -1090, -44, -1069, 162, -953, 200, -922, 239, -873, 278, -753, 302, -657, 302, -569, 292, -522, 250, -478, 257, -170, 226, -138, 195, -73, 181, -60, 105, -58, 90, -14)
