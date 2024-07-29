@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=12 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Texture2D" uid="uid://con7qch0qkcji" path="res://assets/images/background/clouds_1.png" id="2_n3m00"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://da6pc7sq228ky" path="res://assets/images/background/ground_8.png" id="8_ibmqn"]
 [ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
+[ext_resource type="PackedScene" uid="uid://bvffqvx1j77cc" path="res://scenes/RockObstacles/rock_obstacles.tscn" id="11_yiblg"]
 
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
@@ -76,6 +77,12 @@ position = Vector2(0, 724)
 [node name="Sviny" parent="." instance=ExtResource("9_bl3xb")]
 z_index = 1
 position = Vector2(251, 332)
-scale = Vector2(0.13, 0.13)
+scale = Vector2(0.15, 0.15)
 gravity = 220.0
 up_player_forse = -180.0
+
+[node name="RockObstacles" parent="." instance=ExtResource("11_yiblg")]
+position = Vector2(936, 482)
+
+[node name="RockObstacles2" parent="." instance=ExtResource("11_yiblg")]
+position = Vector2(456, 194)

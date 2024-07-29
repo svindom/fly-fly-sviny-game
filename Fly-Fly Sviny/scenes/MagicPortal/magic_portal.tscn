@@ -70,12 +70,13 @@ _data = {
 }
 
 [node name="MagicPortal" type="Area2D"]
+z_index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m5bme")
 animation = &"magic_portal_animation"
 autoplay = "magic_portal_animation"
-frame_progress = 0.738226
+frame_progress = 0.277392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(90, 0)

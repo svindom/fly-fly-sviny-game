@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvffqvx1j77cc"]
+
+[ext_resource type="PackedScene" uid="uid://cvmu7xxq72s04" path="res://scenes/MagicPortal/magic_portal.tscn" id="1_16jxx"]
+[ext_resource type="PackedScene" uid="uid://bh1ucxgwv4ube" path="res://scenes/RockObstacleBottom/rock_obstacle_bottom.tscn" id="2_nmoia"]
+[ext_resource type="PackedScene" uid="uid://blyfp5ehw8bnk" path="res://scenes/RockObstacleTop/rock_obstacle_top.tscn" id="3_re7xv"]
+
+[node name="RockObstacles" type="Node2D"]
+
+[node name="MagicPortal" parent="." instance=ExtResource("1_16jxx")]
+scale = Vector2(0.55, 0.55)
+
+[node name="RockObstacleBottom" parent="." instance=ExtResource("2_nmoia")]
+position = Vector2(0, 90)
+scale = Vector2(0.5, 0.5)
+
+[node name="RockObstacleTop" parent="." instance=ExtResource("3_re7xv")]
+position = Vector2(0, -90)
+scale = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(468, 0)
