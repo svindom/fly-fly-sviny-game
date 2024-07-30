@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvmu7xxq72s04"]
+[gd_scene load_steps=12 format=3 uid="uid://cvmu7xxq72s04"]
 
 [ext_resource type="Texture2D" uid="uid://cxanaed58fesl" path="res://assets/images/sprite_sheets/magic_portal_sprite_sheet_5_frames.png" id="1_8tur3"]
+[ext_resource type="Script" path="res://scenes/MagicPortal/magic_portal.gd" id="1_ty75w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ysip"]
 atlas = ExtResource("1_8tur3")
@@ -55,13 +56,13 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.423529, 0.215686, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(0.952941, 0.92549, 0.686275, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nq766"]
@@ -71,6 +72,7 @@ _data = {
 
 [node name="MagicPortal" type="Area2D"]
 z_index = 1
+script = ExtResource("1_ty75w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m5bme")
@@ -86,3 +88,5 @@ shape = SubResource("RectangleShape2D_vt6hc")
 libraries = {
 "": SubResource("AnimationLibrary_nq766")
 }
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+var reset_score_value: int = 0
+
 # Preloading the Scene
 const ROCK_OBSTACLES_SCENE_PATH: String = "res://scenes/RockObstacles/rock_obstacles.tscn"
 @onready var rock_obstacles_scene_reference: PackedScene = preload(ROCK_OBSTACLES_SCENE_PATH)
@@ -14,6 +16,8 @@ const ROCK_OBSTACLES_SCENE_PATH: String = "res://scenes/RockObstacles/rock_obsta
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset_score_on_start(reset_score_value)
+	
 	# This Signal is emited in the Sviny script in the destroy_sviny() func
 	SignalManager.on_sviny_destroyed.connect(call_destroy_sviny)
 	spawn_rock_obstacles()
@@ -59,7 +63,8 @@ func call_destroy_sviny() -> void:
 	stop_rocks_move()
 
 
-
+func reset_score_on_start(score_value: int) -> void:
+	ScoreManager.set_score(score_value)
 
 
 
