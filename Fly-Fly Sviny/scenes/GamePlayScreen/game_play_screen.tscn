@@ -1,6 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
+[ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
 [ext_resource type="Texture2D" uid="uid://con7qch0qkcji" path="res://assets/images/background/clouds_1.png" id="2_n3m00"]
 [ext_resource type="Texture2D" uid="uid://b10h82ds11hcs" path="res://assets/images/background/background_mountains_3.png" id="3_opag0"]
 [ext_resource type="Texture2D" uid="uid://bq7aji3xi1m5f" path="res://assets/images/background/middleground_mountaines_4.png" id="4_duw45"]
@@ -10,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://da6pc7sq228ky" path="res://assets/images/background/ground_8.png" id="8_ibmqn"]
 [ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
-[ext_resource type="PackedScene" uid="uid://bvffqvx1j77cc" path="res://scenes/RockObstacles/rock_obstacles.tscn" id="11_yiblg"]
 
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
+script = ExtResource("1_yv43v")
 
 [node name="TemporaryBG" type="Node" parent="."]
 
@@ -78,11 +79,19 @@ position = Vector2(0, 724)
 z_index = 1
 position = Vector2(251, 332)
 scale = Vector2(0.15, 0.15)
-gravity = 220.0
+gravity = 340.0
 up_player_forse = -180.0
 
-[node name="RockObstacles" parent="." instance=ExtResource("11_yiblg")]
-position = Vector2(936, 482)
+[node name="RocksHolder" type="Node" parent="."]
 
-[node name="RockObstacles2" parent="." instance=ExtResource("11_yiblg")]
-position = Vector2(456, 194)
+[node name="SpawnRocksTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="SpawnMarkerUpper" type="Marker2D" parent="."]
+position = Vector2(1880, 180)
+
+[node name="SpawnMarkerLower" type="Marker2D" parent="."]
+position = Vector2(1880, 540)
+
+[connection signal="timeout" from="SpawnRocksTimer" to="." method="_on_spawn_rocks_timer_timeout"]

@@ -22,8 +22,6 @@ func _physics_process(delta):
 
 
 
-
-
 # To stop the Sviny animation and to stop invoking its physics
 func destroy_sviny() -> void:
 	sviny_idle_fly_frame_animation.stop() # stop frame animation
