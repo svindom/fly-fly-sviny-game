@@ -6,7 +6,8 @@ extends CharacterBody2D
 
 @onready var sviny_idle_fly_frame_animation: AnimatedSprite2D = $SvinyIdleFlyFrameAnimation
 @onready var up_force_animation: AnimationPlayer = $UpForceAnimation
-@onready var bubble_particles:GPUParticles2D = $BubbleParticles
+@onready var bubble_particles: GPUParticles2D = $BubbleParticles
+@onready var sviny_hit_sound: AudioStreamPlayer2D = $SvinyHitSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,7 @@ func _physics_process(delta):
 
 # To stop the Sviny animation and to stop invoking its physics
 func destroy_sviny() -> void:
+	sviny_hit_sound.play()
 	sviny_idle_fly_frame_animation.stop() # stop frame animation
 	set_physics_process(false) # disable physics process
 	bubble_particles.emitting = false # stop emitting particles

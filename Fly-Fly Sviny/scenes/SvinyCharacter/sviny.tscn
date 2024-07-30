@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ptqq4imnxe5r"]
+[gd_scene load_steps=18 format=3 uid="uid://ptqq4imnxe5r"]
 
 [ext_resource type="Script" path="res://scenes/SvinyCharacter/sviny.gd" id="1_3jcnp"]
 [ext_resource type="Texture2D" uid="uid://bkw7bxowibkwv" path="res://assets/images/sviny_character/sviny_idle_atlas.png" id="1_4p3c5"]
 [ext_resource type="Texture2D" uid="uid://c417afplemalx" path="res://assets/images/bubble_sprite.png" id="3_5ofg0"]
+[ext_resource type="AudioStream" uid="uid://bcn7k2s7al4lf" path="res://assets/sounds/hit.wav" id="4_sos5i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l8ml"]
 atlas = ExtResource("1_4p3c5")
@@ -146,3 +147,7 @@ lifetime = 0.7
 preprocess = 20.0
 explosiveness = 0.1
 randomness = 0.2
+
+[node name="SvinyHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sos5i")
+volume_db = 10.0

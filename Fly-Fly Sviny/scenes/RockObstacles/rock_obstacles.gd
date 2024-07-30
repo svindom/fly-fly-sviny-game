@@ -3,6 +3,8 @@ extends Node2D
 @export var scroll_speed: float = GameManager.scroll_speed
 
 @onready var magic_portal: Area2D = $MagicPortal
+@onready var portal_pass_sound: AudioStreamPlayer2D = $PortalPassSound
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +35,8 @@ func _on_magic_portal_body_entered(body):
 	if check_if_body_in_group(body) == true:
 		print("Sviny collides with the portal")
 		ScoreManager.increment_score()
+		# Play the portal pass sound
+		portal_pass_sound.play()
 		# Play the portal turn off animation
 		if magic_portal and magic_portal.has_method("play_turn_off_animation"):
 			magic_portal.play_turn_off_animation()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvffqvx1j77cc"]
+[gd_scene load_steps=6 format=3 uid="uid://bvffqvx1j77cc"]
 
 [ext_resource type="Script" path="res://scenes/RockObstacles/rock_obstacles.gd" id="1_2hwrk"]
 [ext_resource type="PackedScene" uid="uid://cvmu7xxq72s04" path="res://scenes/MagicPortal/magic_portal.tscn" id="1_16jxx"]
 [ext_resource type="PackedScene" uid="uid://bh1ucxgwv4ube" path="res://scenes/RockObstacleBottom/rock_obstacle_bottom.tscn" id="2_nmoia"]
 [ext_resource type="PackedScene" uid="uid://blyfp5ehw8bnk" path="res://scenes/RockObstacleTop/rock_obstacle_top.tscn" id="3_re7xv"]
+[ext_resource type="AudioStream" uid="uid://bat7nmphhjusm" path="res://assets/sounds/portal_pass.wav" id="5_ka3rs"]
 
 [node name="RockObstacles" type="Node2D"]
 script = ExtResource("1_2hwrk")
@@ -22,6 +23,10 @@ scale = Vector2(0.5, 0.5)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(468, 0)
+
+[node name="PortalPassSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ka3rs")
+volume_db = -5.0
 
 [connection signal="body_entered" from="MagicPortal" to="." method="_on_magic_portal_body_entered"]
 [connection signal="body_entered" from="RockObstacleTop" to="." method="_on_rock_obstacles_body_entered"]
