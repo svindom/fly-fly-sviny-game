@@ -80,7 +80,7 @@ z_index = 1
 position = Vector2(251, 332)
 scale = Vector2(0.15, 0.15)
 gravity = 340.0
-up_player_forse = -180.0
+up_player_forse = -150.0
 
 [node name="RocksHolder" type="Node" parent="."]
 

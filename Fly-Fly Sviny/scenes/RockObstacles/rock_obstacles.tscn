@@ -12,14 +12,17 @@ script = ExtResource("1_2hwrk")
 scale = Vector2(0.55, 0.55)
 
 [node name="RockObstacleTop" parent="." instance=ExtResource("3_re7xv")]
-position = Vector2(0, -88)
+position = Vector2(0, -90)
 scale = Vector2(0.5, 0.5)
 
 [node name="RockObstacleBottom" parent="." instance=ExtResource("2_nmoia")]
-position = Vector2(0, 88)
+position = Vector2(0, 90)
 scale = Vector2(0.5, 0.5)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(468, 0)
 
+[connection signal="body_entered" from="MagicPortal" to="." method="_on_magic_portal_body_entered"]
+[connection signal="body_entered" from="RockObstacleTop" to="." method="_on_rock_obstacles_body_entered"]
+[connection signal="body_entered" from="RockObstacleBottom" to="." method="_on_rock_obstacles_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

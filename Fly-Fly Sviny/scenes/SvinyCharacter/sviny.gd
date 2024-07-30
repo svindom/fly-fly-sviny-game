@@ -26,14 +26,17 @@ func _physics_process(delta):
 func destroy_sviny() -> void:
 	sviny_idle_fly_frame_animation.stop() # stop frame animation
 	set_physics_process(false) # disable physics process
+	bubble_particles.emitting = false # stop emitting particles
+	
+	# Use a signal that was created in signal_manager script 
+	# This Signal is connected in the game play script
+	SignalManager.on_sviny_destroyed.emit()
 
 
 # Destroy Sviny when it is on the ground
 func  destroy_sviny_on_ground() -> void:
 	if is_on_floor() == true:
 		destroy_sviny()
-		bubble_particles.emitting = false # stop emitting particles
-
 
 
 func add_gravity_to_sviny(delta) -> void:

@@ -117,7 +117,7 @@ color_ramp = SubResource("GradientTexture1D_peil2")
 anim_speed_max = 8.09
 anim_offset_max = 0.3596
 
-[node name="Sviny" type="CharacterBody2D"]
+[node name="Sviny" type="CharacterBody2D" groups=["sviny"]]
 collision_mask = 8
 script = ExtResource("1_3jcnp")
 
