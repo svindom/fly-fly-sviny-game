@@ -26,7 +26,7 @@ position = Vector2(468, 0)
 
 [node name="PortalPassSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ka3rs")
-volume_db = -5.0
+volume_db = -9.0
 
 [connection signal="body_entered" from="MagicPortal" to="." method="_on_magic_portal_body_entered"]
 [connection signal="body_entered" from="RockObstacleTop" to="." method="_on_rock_obstacles_body_entered"]

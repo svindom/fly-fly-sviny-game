@@ -150,4 +150,4 @@ randomness = 0.2
 
 [node name="SvinyHitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_sos5i")
-volume_db = 10.0
+volume_db = 3.0
