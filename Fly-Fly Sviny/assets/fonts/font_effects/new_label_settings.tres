@@ -1,0 +1,14 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://gji5k8k2bljl"]
+
+[ext_resource type="FontFile" uid="uid://c6pckh1qf6au2" path="res://assets/fonts/Mr.Jenkins-Extrabold.otf" id="1_uy7kb"]
+
+[resource]
+resource_name = "ScoreFontEffect"
+font = ExtResource("1_uy7kb")
+font_size = 50
+font_color = Color(0.988235, 0.835294, 0.172549, 1)
+outline_size = 10
+outline_color = Color(0.819608, 0.521569, 0, 1)
+shadow_size = 24
+shadow_color = Color(0.282353, 0.184314, 0.105882, 1)
+shadow_offset = Vector2(0, 2)

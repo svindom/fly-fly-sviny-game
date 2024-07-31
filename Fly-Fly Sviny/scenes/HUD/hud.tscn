@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3gxsv51g7lq3"]
+
+[ext_resource type="FontVariation" uid="uid://c20gricousib1" path="res://assets/fonts/font_effects/score_text.tres" id="1_cpbrd"]
+[ext_resource type="Script" path="res://scenes/HUD/hud.gd" id="1_nt7jq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_had6q"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt7jq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScoreText" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.988235, 0.835294, 0.172549, 1)
+theme_override_colors/font_shadow_color = Color(0.282353, 0.184314, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.819608, 0.521569, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 24
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_cpbrd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_had6q")
+text = "000"

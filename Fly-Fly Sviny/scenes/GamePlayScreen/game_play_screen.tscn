@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=13 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://da6pc7sq228ky" path="res://assets/images/background/ground_8.png" id="8_ibmqn"]
 [ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
+[ext_resource type="PackedScene" uid="uid://b3gxsv51g7lq3" path="res://scenes/HUD/hud.tscn" id="12_8e14h"]
 
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
@@ -80,7 +81,7 @@ z_index = 1
 position = Vector2(251, 332)
 scale = Vector2(0.15, 0.15)
 gravity = 340.0
-up_player_forse = -150.0
+up_player_forse = -170.0
 
 [node name="RocksHolder" type="Node" parent="."]
 
@@ -93,5 +94,9 @@ position = Vector2(1880, 180)
 
 [node name="SpawnMarkerLower" type="Marker2D" parent="."]
 position = Vector2(1880, 560)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("12_8e14h")]
 
 [connection signal="timeout" from="SpawnRocksTimer" to="." method="_on_spawn_rocks_timer_timeout"]
