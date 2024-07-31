@@ -4,8 +4,11 @@ var _score: int = 0
 var _high_score: int = 0
 var _updated_score: int = 0
 
+
+
 func get_score() -> int:
 	return _score 
+
 
 func set_score(score_value: int) -> void:
 	_score = score_value
@@ -15,6 +18,7 @@ func set_score(score_value: int) -> void:
 		print("the new Score is: ", _high_score)
 	
 	SignalManager.on_score_updated.emit()
+
 
 func get_high_score() -> int:
 	return _high_score

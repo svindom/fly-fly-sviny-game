@@ -11,7 +11,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
 func _process(delta):
 	move_rocks(scroll_speed, delta)
 
@@ -38,9 +37,15 @@ func _on_magic_portal_body_entered(body):
 		# Play the portal pass sound
 		portal_pass_sound.play()
 		# Play the portal turn off animation
-		if magic_portal and magic_portal.has_method("play_turn_off_animation"):
-			magic_portal.play_turn_off_animation()
+		check_and_play_portal_off_animation() 
 
+
+func check_and_play_portal_off_animation() -> void:
+	if magic_portal and magic_portal.has_method("play_turn_off_animation") == true:
+		magic_portal.play_turn_off_animation()
+	else:
+		print("Warning: 'play_turn_off_animation' method not found on magic_portal")
+		print("Or the magic_portal node doesn't exist")
 
 
 # Checking if an object is detected in the group, which we created in the Sviny Scene

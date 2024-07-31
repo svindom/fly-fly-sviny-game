@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var bubble_particles: GPUParticles2D = $BubbleParticles
 @onready var sviny_hit_sound: AudioStreamPlayer2D = $SvinyHitSound
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,7 +22,6 @@ func _physics_process(delta):
 	add_up_move_to_fly()
 	destroy_sviny_on_ground()
 	move_and_slide() # this applies the velocity to the character's position (moves a character)
-
 
 
 # To stop the Sviny animation and to stop invoking its physics
@@ -43,6 +44,7 @@ func  destroy_sviny_on_ground() -> void:
 
 func add_gravity_to_sviny(delta) -> void:
 	velocity.y += gravity * delta
+
 
 func add_up_move_to_fly() -> void:
 	# When the space key is pressed

@@ -23,8 +23,6 @@ func _ready():
 	spawn_rock_obstacles()
 
 
-
-
 # Called "SpawnRocksTimer" Timer
 func _on_spawn_rocks_timer_timeout():
 	spawn_rock_obstacles()
@@ -35,7 +33,6 @@ func stop_rocks_move() -> void:
 	spawn_rocks_timer.stop()
 	for rock in rocks_holder.get_children():    # the godot function to get all children
 		rock.set_process(false) # Stop the _process function executing in the rock_obstacles script
-	
 
 
 func spawn_rock_obstacles() -> void:
@@ -51,13 +48,11 @@ func spawn_rock_obstacles() -> void:
 	rocks_holder.add_child(new_rock_obstacles_scene_instance)
 
 
-
-
 # Get Random position on y axis
 func get_random_y_axis() -> float:
 	var y_pos_random: float = randf_range(spawn_marker_upper.position.y, spawn_marker_lower.position.y)
 	return y_pos_random
-	
+
 
 func call_destroy_sviny() -> void:
 	stop_rocks_move()
