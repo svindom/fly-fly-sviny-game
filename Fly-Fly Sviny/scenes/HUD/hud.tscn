@@ -2,8 +2,7 @@
 
 [ext_resource type="FontVariation" uid="uid://c20gricousib1" path="res://assets/fonts/font_effects/score_text.tres" id="1_cpbrd"]
 [ext_resource type="Script" path="res://scenes/HUD/hud.gd" id="1_nt7jq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_had6q"]
+[ext_resource type="StyleBox" uid="uid://735dbpwbacpy" path="res://assets/fonts/font_effects/score_new.tres" id="3_lrosa"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -39,5 +38,5 @@ theme_override_constants/shadow_outline_size = 24
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("1_cpbrd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_had6q")
+theme_override_styles/normal = ExtResource("3_lrosa")
 text = "000"

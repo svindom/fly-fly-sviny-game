@@ -5,7 +5,7 @@
 [resource]
 resource_name = "ScoreFontEffect"
 font = ExtResource("1_uy7kb")
-font_size = 50
+font_size = 52
 font_color = Color(0.988235, 0.835294, 0.172549, 1)
 outline_size = 10
 outline_color = Color(0.819608, 0.521569, 0, 1)

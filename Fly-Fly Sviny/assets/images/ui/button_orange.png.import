@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmh72eocrcwk2"
-path="res://.godot/imported/fly_fly_sviny_logo.png-fbf3640bf381bbc396452fc4777de279.ctex"
+uid="uid://c8gor4b7g1a5n"
+path="res://.godot/imported/button_orange.png-01c8838505801f021b18b7bb848e9b5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fly_fly_sviny_logo.png"
-dest_files=["res://.godot/imported/fly_fly_sviny_logo.png-fbf3640bf381bbc396452fc4777de279.ctex"]
+source_file="res://assets/images/ui/button_orange.png"
+dest_files=["res://.godot/imported/button_orange.png-01c8838505801f021b18b7bb848e9b5c.ctex"]
 
 [params]
 

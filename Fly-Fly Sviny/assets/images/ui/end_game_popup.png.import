@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8gor4b7g1a5n"
-path="res://.godot/imported/button_orange.png-67e8529fea8217d23b36b06f19306b94.ctex"
+uid="uid://b5nerhm28wmc"
+path="res://.godot/imported/end_game_popup.png-fe51b83ec90e75585da8dd5258de0819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/button_orange.png"
-dest_files=["res://.godot/imported/button_orange.png-67e8529fea8217d23b36b06f19306b94.ctex"]
+source_file="res://assets/images/ui/end_game_popup.png"
+dest_files=["res://.godot/imported/end_game_popup.png-fe51b83ec90e75585da8dd5258de0819.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cdikkf5pdveor"]
+
+[ext_resource type="FontFile" uid="uid://c6pckh1qf6au2" path="res://assets/fonts/Mr.Jenkins-Extrabold.otf" id="1_kle6w"]
+
+[resource]
+font = ExtResource("1_kle6w")
+font_size = 28
+shadow_size = 12
+shadow_color = Color(0.282353, 0.184314, 0.105882, 1)
+shadow_offset = Vector2(0, 1.5)
