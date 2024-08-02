@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqsw6mn0et7cy"]
+
+[ext_resource type="Texture2D" uid="uid://ds4qwgvf8fos4" path="res://assets/images/sprite_sheets/leaf.png" id="1_tivpy"]
+
+[sub_resource type="Curve" id="Curve_m4oaa"]
+_data = [Vector2(0.0130435, 0.230769), 0.0, 0.0, 0, 0, Vector2(0.495652, 0.945055), 0.0711964, 0.0711964, 0, 0, Vector2(0.991304, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = 1
+position = Vector2(0, 4)
+amount = 12
+lifetime = 2.0
+preprocess = 2.0
+speed_scale = 0.2
+lifetime_randomness = 0.5
+draw_order = 1
+texture = ExtResource("1_tivpy")
+emission_shape = 3
+emission_rect_extents = Vector2(800, 200)
+gravity = Vector2(0, 200)
+initial_velocity_max = 996.0
+angular_velocity_max = 720.0
+orbit_velocity_max = 0.3
+linear_accel_max = 0.8
+radial_accel_max = 0.2
+tangential_accel_min = -2.0
+tangential_accel_max = 2.0
+damping_min = 1.0
+damping_max = 3.0
+angle_max = 2.0
+scale_amount_min = 0.0
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_m4oaa")
+color = Color(0.633757, 0.633757, 0.633757, 0.486275)
+anim_speed_min = 1.0
+anim_speed_max = 2.0
+anim_offset_max = 1.0

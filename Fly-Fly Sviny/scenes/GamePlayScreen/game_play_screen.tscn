@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=14 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
 [ext_resource type="PackedScene" uid="uid://b3gxsv51g7lq3" path="res://scenes/HUD/hud.tscn" id="12_8e14h"]
+[ext_resource type="PackedScene" uid="uid://cqsw6mn0et7cy" path="res://scenes/LeavesIdleAnimation/leaves_idle_animation_cpu.tscn" id="13_fjtd3"]
 
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
@@ -98,5 +99,8 @@ position = Vector2(1880, 560)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("12_8e14h")]
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("13_fjtd3")]
+position = Vector2(393, -55)
 
 [connection signal="timeout" from="SpawnRocksTimer" to="." method="_on_spawn_rocks_timer_timeout"]
