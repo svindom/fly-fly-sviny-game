@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=17 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
 [ext_resource type="PackedScene" uid="uid://b3gxsv51g7lq3" path="res://scenes/HUD/hud.tscn" id="12_8e14h"]
 [ext_resource type="PackedScene" uid="uid://cqsw6mn0et7cy" path="res://scenes/LeavesIdleAnimation/leaves_idle_animation_cpu.tscn" id="13_fjtd3"]
+[ext_resource type="PackedScene" uid="uid://c18a3xui3vslf" path="res://scenes/GameOverScreen/game_over_screen.tscn" id="13_utwqr"]
+[ext_resource type="PackedScene" uid="uid://bl8ipw2nvkotj" path="res://scenes/Hint/hint.tscn" id="14_40mxq"]
+[ext_resource type="AudioStream" uid="uid://cg1jljccuu6ek" path="res://assets/sounds/gameplay_screen_music.mp3" id="16_qq65y"]
 
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
@@ -78,7 +81,7 @@ position = Vector2(0, -30)
 position = Vector2(0, 724)
 
 [node name="Sviny" parent="." instance=ExtResource("9_bl3xb")]
-z_index = 1
+z_index = 2
 position = Vector2(251, 332)
 scale = Vector2(0.15, 0.15)
 gravity = 340.0
@@ -96,11 +99,21 @@ position = Vector2(1880, 180)
 [node name="SpawnMarkerLower" type="Marker2D" parent="."]
 position = Vector2(1880, 560)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("12_8e14h")]
+[node name="HUD" parent="UI" instance=ExtResource("12_8e14h")]
+
+[node name="GameOverScreen" parent="UI" instance=ExtResource("13_utwqr")]
+visible = false
+
+[node name="Hint" parent="UI" instance=ExtResource("14_40mxq")]
 
 [node name="CPUParticles2D" parent="." instance=ExtResource("13_fjtd3")]
 position = Vector2(393, -55)
+
+[node name="GamePlayMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_qq65y")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="timeout" from="SpawnRocksTimer" to="." method="_on_spawn_rocks_timer_timeout"]

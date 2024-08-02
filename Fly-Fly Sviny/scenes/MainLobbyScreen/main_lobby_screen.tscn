@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6at7tcje7cwh"]
+
+[ext_resource type="Texture2D" uid="uid://dpombpyb453he" path="res://assets/images/ui/main_screen_key_art.png" id="1_ve2om"]
+[ext_resource type="Texture2D" uid="uid://cmh72eocrcwk2" path="res://assets/images/ui/fly_fly_sviny_logo.png" id="2_ipgh2"]
+
+[node name="MainLobbyScreen" type="Node2D"]
+
+[node name="KeyArtBg" type="Sprite2D" parent="."]
+position = Vector2(633, 336)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_ve2om")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(606, 167)
+scale = Vector2(0.310966, 0.310966)
+texture = ExtResource("2_ipgh2")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl8ipw2nvkotj"]
+
+[ext_resource type="Script" path="res://scenes/Hint/hint.gd" id="1_1e3uk"]
+[ext_resource type="LabelSettings" uid="uid://cdikkf5pdveor" path="res://assets/fonts/font_effects/common_font_effect.tres" id="2_rw0ey"]
+
+[node name="Hint" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1e3uk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Press Space or Up key to Fly!"
+label_settings = ExtResource("2_rw0ey")
+horizontal_alignment = 1
+
+[node name="TurnOffHintTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TurnOffHintTimer" to="." method="_on_turn_off_hint_timer_timeout"]

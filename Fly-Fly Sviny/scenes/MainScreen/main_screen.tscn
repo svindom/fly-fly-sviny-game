@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8pmarojekhy2"]
+[gd_scene load_steps=10 format=3 uid="uid://8pmarojekhy2"]
 
 [ext_resource type="Script" path="res://scenes/MainScreen/main_screen.gd" id="1_can4d"]
 [ext_resource type="Texture2D" uid="uid://dpombpyb453he" path="res://assets/images/ui/main_screen_key_art.png" id="2_twqar"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmh72eocrcwk2" path="res://assets/images/ui/fly_fly_sviny_logo.png" id="3_wm6dy"]
 [ext_resource type="LabelSettings" uid="uid://cdikkf5pdveor" path="res://assets/fonts/font_effects/common_font_effect.tres" id="4_b3iq3"]
 [ext_resource type="PackedScene" uid="uid://cqsw6mn0et7cy" path="res://scenes/LeavesIdleAnimation/leaves_idle_animation_cpu.tscn" id="6_dqmqw"]
+[ext_resource type="AudioStream" uid="uid://dk1ph8m60t8nw" path="res://assets/sounds/main_screen_music.mp3" id="7_cmeis"]
 
 [sub_resource type="Animation" id="Animation_b1i83"]
 resource_name = "press_play_animation"
@@ -125,3 +126,8 @@ autoplay = "press_play_animation"
 
 [node name="CPUParticles2D" parent="." instance=ExtResource("6_dqmqw")]
 position = Vector2(147, 1)
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cmeis")
+volume_db = -10.0
+autoplay = true
