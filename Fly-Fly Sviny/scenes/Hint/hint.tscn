@@ -27,7 +27,7 @@ theme_override_constants/margin_bottom = 20
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Press Space or Up key to Fly!"
+text = "Press Space or tap to Fly!"
 label_settings = ExtResource("2_rw0ey")
 horizontal_alignment = 1
 

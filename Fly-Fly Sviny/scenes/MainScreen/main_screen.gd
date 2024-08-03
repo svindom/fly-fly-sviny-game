@@ -19,6 +19,6 @@ func set_score_on_main_screen() -> void:
 
 
 func enter_game_screen() -> void:
-	if Input.is_action_just_pressed("press_enter_to_play") == true:
+	if Input.is_action_just_pressed("up_force") == true:
 		GameManager.load_game_play_scene()
 

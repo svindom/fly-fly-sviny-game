@@ -1,14 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=13 format=3 uid="uid://b2fcstcaayirc"]
 
-[ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
-[ext_resource type="Texture2D" uid="uid://con7qch0qkcji" path="res://assets/images/background/clouds_1.png" id="2_n3m00"]
-[ext_resource type="Texture2D" uid="uid://b10h82ds11hcs" path="res://assets/images/background/background_mountains_3.png" id="3_opag0"]
-[ext_resource type="Texture2D" uid="uid://bq7aji3xi1m5f" path="res://assets/images/background/middleground_mountaines_4.png" id="4_duw45"]
-[ext_resource type="Texture2D" uid="uid://c8814agfgox27" path="res://assets/images/background/fog_5.png" id="5_hmeum"]
-[ext_resource type="Texture2D" uid="uid://bj6ykfx2bwlcf" path="res://assets/images/background/middleground_hills_6.png" id="6_4boh3"]
-[ext_resource type="Texture2D" uid="uid://cn2lqquahag7r" path="res://assets/images/background/middleground_field_7.png" id="7_aax3g"]
-[ext_resource type="Texture2D" uid="uid://da6pc7sq228ky" path="res://assets/images/background/ground_8.png" id="8_ibmqn"]
 [ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
 [ext_resource type="PackedScene" uid="uid://b3gxsv51g7lq3" path="res://scenes/HUD/hud.tscn" id="12_8e14h"]
@@ -24,65 +16,6 @@
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
 script = ExtResource("1_yv43v")
-
-[node name="TemporaryBG" type="Node" parent="."]
-
-[node name="TemporaryBGSky" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("1_m3myj")
-centered = false
-
-[node name="TemporaryBGClouds" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("2_n3m00")
-centered = false
-
-[node name="TemporaryBG" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("3_opag0")
-centered = false
-
-[node name="TemporaryBG2" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("4_duw45")
-centered = false
-
-[node name="TemporaryBG3" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("5_hmeum")
-centered = false
-
-[node name="TemporaryBG4" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-position = Vector2(-1766, 0)
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("6_4boh3")
-centered = false
-
-[node name="TemporaryBG5" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("7_aax3g")
-centered = false
-
-[node name="TemporaryBG6" type="Sprite2D" parent="TemporaryBG"]
-visible = false
-z_index = -1
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("8_ibmqn")
-centered = false
 
 [node name="Barriers" type="Node" parent="."]
 
@@ -136,7 +69,7 @@ script = ExtResource("18_ph1cb")
 
 [node name="ParallaxLayerForeground" type="ParallaxLayer" parent="ParallaxForeground"]
 visible = false
-motion_scale = Vector2(2, 0)
+motion_scale = Vector2(3, 0)
 script = ExtResource("19_yymef")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxForeground/ParallaxLayerForeground"]

@@ -1,7 +1,7 @@
 extends Node
 
 const SVINY_GROUP_NAME: String = "sviny"
-var scroll_speed: float = 150.0
+var scroll_speed: float = 170.0
 
 var game_play_screen: PackedScene = preload("res://scenes/GamePlayScreen/game_play_screen.tscn")
 var main_screen: PackedScene = preload("res://scenes/MainScreen/main_screen.tscn")
