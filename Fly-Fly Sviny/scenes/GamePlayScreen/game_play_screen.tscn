@@ -35,7 +35,7 @@ up_player_forse = -170.0
 [node name="RocksHolder" type="Node" parent="."]
 
 [node name="SpawnRocksTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 autostart = true
 
 [node name="SpawnMarkerUpper" type="Marker2D" parent="."]
