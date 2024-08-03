@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsh5uhdqtxfcu"]
+
+[ext_resource type="Script" path="res://scenes/ParallaxBackground/parallax_background.gd" id="1_f1ot4"]
+[ext_resource type="PackedScene" uid="uid://cgc3idkuanx2" path="res://scenes/ParallaxBackground/parallax_layer.tscn" id="2_7jftj"]
+[ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="3_25qj5"]
+[ext_resource type="Texture2D" uid="uid://con7qch0qkcji" path="res://assets/images/background/clouds_1.png" id="4_bqqqj"]
+[ext_resource type="Texture2D" uid="uid://b10h82ds11hcs" path="res://assets/images/background/background_mountains_3.png" id="5_hrshj"]
+[ext_resource type="Texture2D" uid="uid://bq7aji3xi1m5f" path="res://assets/images/background/middleground_mountaines_4.png" id="6_4fgup"]
+[ext_resource type="Texture2D" uid="uid://c8814agfgox27" path="res://assets/images/background/fog_5.png" id="7_w7jbb"]
+[ext_resource type="Texture2D" uid="uid://bj6ykfx2bwlcf" path="res://assets/images/background/middleground_hills_6.png" id="8_0jkru"]
+[ext_resource type="Texture2D" uid="uid://cn2lqquahag7r" path="res://assets/images/background/middleground_field_7.png" id="9_1q17f"]
+[ext_resource type="Texture2D" uid="uid://da6pc7sq228ky" path="res://assets/images/background/ground_8.png" id="10_lc6bm"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_f1ot4")
+
+[node name="sky_0" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("3_25qj5")
+
+[node name="clouds_1" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("4_bqqqj")
+motion_scroll_scale_speed = -0.3
+
+[node name="background_mountains_2" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("5_hrshj")
+motion_scroll_scale_speed = 0.1
+
+[node name="middleground_mountaines_3" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("6_4fgup")
+motion_scroll_scale_speed = 0.3
+
+[node name="fog_4" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("7_w7jbb")
+motion_scroll_scale_speed = 0.7
+
+[node name="middleground_hills_5" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("8_0jkru")
+motion_scroll_scale_speed = 0.6
+
+[node name="middleground_field_6" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("9_1q17f")
+motion_scroll_scale_speed = 0.8
+
+[node name="ground_7" parent="." instance=ExtResource("2_7jftj")]
+new_texture = ExtResource("10_lc6bm")
+motion_scroll_scale_speed = 0.95

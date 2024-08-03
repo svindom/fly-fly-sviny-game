@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=21 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="1_m3myj"]
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://c18a3xui3vslf" path="res://scenes/GameOverScreen/game_over_screen.tscn" id="13_utwqr"]
 [ext_resource type="PackedScene" uid="uid://bl8ipw2nvkotj" path="res://scenes/Hint/hint.tscn" id="14_40mxq"]
 [ext_resource type="AudioStream" uid="uid://cg1jljccuu6ek" path="res://assets/sounds/gameplay_screen_music.mp3" id="16_qq65y"]
+[ext_resource type="PackedScene" uid="uid://bsh5uhdqtxfcu" path="res://scenes/ParallaxBackground/parallax_background.tscn" id="17_4cdtb"]
+[ext_resource type="Script" path="res://scenes/GamePlayScreen/ParallaxForeground.gd" id="18_ph1cb"]
+[ext_resource type="Script" path="res://scenes/GamePlayScreen/ParallaxLayerForeground.gd" id="19_yymef"]
+[ext_resource type="Texture2D" uid="uid://c4vqgvk7mdmah" path="res://assets/images/background/foreground_10.png" id="20_txvls"]
 
 [node name="GamePlayScreen" type="Node2D"]
 z_index = -1
@@ -24,36 +28,42 @@ script = ExtResource("1_yv43v")
 [node name="TemporaryBG" type="Node" parent="."]
 
 [node name="TemporaryBGSky" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("1_m3myj")
 centered = false
 
 [node name="TemporaryBGClouds" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("2_n3m00")
 centered = false
 
 [node name="TemporaryBG" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("3_opag0")
 centered = false
 
 [node name="TemporaryBG2" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("4_duw45")
 centered = false
 
 [node name="TemporaryBG3" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("5_hmeum")
 centered = false
 
 [node name="TemporaryBG4" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 position = Vector2(-1766, 0)
 scale = Vector2(0.67, 0.67)
@@ -61,12 +71,14 @@ texture = ExtResource("6_4boh3")
 centered = false
 
 [node name="TemporaryBG5" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("7_aax3g")
 centered = false
 
 [node name="TemporaryBG6" type="Sprite2D" parent="TemporaryBG"]
+visible = false
 z_index = -1
 scale = Vector2(0.67, 0.67)
 texture = ExtResource("8_ibmqn")
@@ -115,5 +127,21 @@ position = Vector2(393, -55)
 stream = ExtResource("16_qq65y")
 volume_db = -20.0
 autoplay = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("17_4cdtb")]
+
+[node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+layer = 3
+script = ExtResource("18_ph1cb")
+
+[node name="ParallaxLayerForeground" type="ParallaxLayer" parent="ParallaxForeground"]
+visible = false
+motion_scale = Vector2(2, 0)
+script = ExtResource("19_yymef")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxForeground/ParallaxLayerForeground"]
+z_index = 3
+texture = ExtResource("20_txvls")
+centered = false
 
 [connection signal="timeout" from="SpawnRocksTimer" to="." method="_on_spawn_rocks_timer_timeout"]

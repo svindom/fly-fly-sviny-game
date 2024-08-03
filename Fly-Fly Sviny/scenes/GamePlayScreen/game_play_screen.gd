@@ -19,7 +19,7 @@ func _ready():
 	reset_score_on_start(reset_score_value)
 	
 	# This Signal is emited in the Sviny script in the destroy_sviny() func
-	SignalManager.on_sviny_destroyed.connect(call_destroy_sviny)
+	SignalManager.on_sviny_destroyed.connect(stop_rocks_move)
 	spawn_rock_obstacles()
 
 
@@ -52,10 +52,6 @@ func spawn_rock_obstacles() -> void:
 func get_random_y_axis() -> float:
 	var y_pos_random: float = randf_range(spawn_marker_upper.position.y, spawn_marker_lower.position.y)
 	return y_pos_random
-
-
-func call_destroy_sviny() -> void:
-	stop_rocks_move()
 
 
 func reset_score_on_start(score_value: int) -> void:

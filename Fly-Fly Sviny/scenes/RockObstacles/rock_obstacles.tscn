@@ -8,7 +8,6 @@
 
 [node name="RockObstacles" type="Node2D"]
 script = ExtResource("1_2hwrk")
-scroll_speed = 150.0
 
 [node name="MagicPortal" parent="." instance=ExtResource("1_16jxx")]
 scale = Vector2(0.55, 0.55)

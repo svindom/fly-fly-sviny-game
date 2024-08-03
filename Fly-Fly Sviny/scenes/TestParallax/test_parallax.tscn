@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcubv828tgikg"]
+
+[ext_resource type="Script" path="res://scenes/TestParallax/test_parallax.gd" id="1_63ovb"]
+[ext_resource type="Texture2D" uid="uid://b4mn81rh6ak7j" path="res://assets/images/test/tree.png" id="2_aye4w"]
+[ext_resource type="Texture2D" uid="uid://d0pfv4iehn5ns" path="res://assets/images/background/sky_0.png" id="3_vjofn"]
+[ext_resource type="Texture2D" uid="uid://con7qch0qkcji" path="res://assets/images/background/clouds_1.png" id="4_kmi4b"]
+[ext_resource type="Texture2D" uid="uid://b10h82ds11hcs" path="res://assets/images/background/background_mountains_3.png" id="5_keqvc"]
+[ext_resource type="Texture2D" uid="uid://bj6ykfx2bwlcf" path="res://assets/images/background/middleground_hills_6.png" id="6_805cj"]
+
+[node name="TestParallax" type="Node2D"]
+script = ExtResource("1_63ovb")
+
+[node name="Tree_01" type="Sprite2D" parent="."]
+position = Vector2(751, 477)
+scale = Vector2(0.762777, 0.762777)
+texture = ExtResource("2_aye4w")
+
+[node name="Tree_02" type="Sprite2D" parent="."]
+position = Vector2(1279, 575)
+scale = Vector2(0.762777, 0.509657)
+texture = ExtResource("2_aye4w")
+
+[node name="Tree_03" type="Sprite2D" parent="."]
+position = Vector2(1588, 415.127)
+scale = Vector2(0.762777, 1.00903)
+texture = ExtResource("2_aye4w")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(125, 400)
+texture = ExtResource("3_vjofn")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(-0.7, -0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(-1169, 252)
+texture = ExtResource("4_kmi4b")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(2723, 252)
+texture = ExtResource("5_keqvc")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(2723, 252)
+texture = ExtResource("6_805cj")

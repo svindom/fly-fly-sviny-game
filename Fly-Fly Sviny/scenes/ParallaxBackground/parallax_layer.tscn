@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgc3idkuanx2"]
+
+[ext_resource type="Script" path="res://scenes/ParallaxBackground/parallax_layer.gd" id="1_3d17x"]
+
+[node name="ParallaxLayer" type="ParallaxLayer"]
+script = ExtResource("1_3d17x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+centered = false

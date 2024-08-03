@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var scroll_speed: float = GameManager.scroll_speed
+var scroll_speed: float = GameManager.scroll_speed
 
 @onready var magic_portal: Area2D = $MagicPortal
 @onready var portal_pass_sound: AudioStreamPlayer2D = $PortalPassSound
