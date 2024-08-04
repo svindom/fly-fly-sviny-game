@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2fcstcaayirc"]
+[gd_scene load_steps=15 format=3 uid="uid://b2fcstcaayirc"]
 
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/game_play_screen.gd" id="1_yv43v"]
 [ext_resource type="Script" path="res://scenes/GamePlayScreen/GameOverScreen.gd" id="6_evb6s"]
 [ext_resource type="Texture2D" uid="uid://b5nerhm28wmc" path="res://assets/images/ui/end_game_popup.png" id="6_x0aoj"]
 [ext_resource type="PackedScene" uid="uid://ptqq4imnxe5r" path="res://scenes/SvinyCharacter/sviny.tscn" id="9_bl3xb"]
+[ext_resource type="LabelSettings" uid="uid://gji5k8k2bljl" path="res://assets/fonts/font_effects/new_label_settings.tres" id="9_fbxeh"]
 [ext_resource type="PackedScene" uid="uid://d1fkdidtx5685" path="res://scenes/Barrier/barrier.tscn" id="10_mbu3g"]
 [ext_resource type="PackedScene" uid="uid://b3gxsv51g7lq3" path="res://scenes/HUD/hud.tscn" id="12_8e14h"]
 [ext_resource type="PackedScene" uid="uid://cqsw6mn0et7cy" path="res://scenes/LeavesIdleAnimation/leaves_idle_animation_cpu.tscn" id="13_fjtd3"]
@@ -86,13 +87,25 @@ color = Color(0.0784314, 0.0392157, 0.27451, 0.129412)
 [node name="MarginContainer" type="MarginContainer" parent="UI/GameOverScreen/GameOverScreenContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 360
+theme_override_constants/margin_top = 150
 theme_override_constants/margin_right = 360
 
-[node name="GameOverPopup" type="TextureRect" parent="UI/GameOverScreen/GameOverScreenContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameOverScreen/GameOverScreenContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="GameOverPopup" type="TextureRect" parent="UI/GameOverScreen/GameOverScreenContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("6_x0aoj")
 stretch_mode = 3
+
+[node name="Score" type="Label" parent="UI/GameOverScreen/GameOverScreenContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("9_fbxeh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CPUParticles2D" parent="." instance=ExtResource("13_fjtd3")]
 position = Vector2(393, -55)
